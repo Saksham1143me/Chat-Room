@@ -24,7 +24,7 @@ function Chat() {
     if (name && room) {
       socketRef.current = io(ENDPOINT, {
         withCredentials: true, // Send cookies with the request
-        transports: ['websocket', 'polling'], // Use both WebSocket and polling
+        transports: ['websocket'], // Use both WebSocket and polling
       });
 // Set socket reference
 
