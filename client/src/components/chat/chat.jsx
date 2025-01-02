@@ -17,7 +17,7 @@ function Chat() {
   const [users,setUsers] = useState([]);
 
   const socketRef = useRef(); // useRef for storing socket instance
-  const ENDPOINT = 'http://localhost:5000'; // Include protocol
+  const ENDPOINT = 'https://chat-room-server-five.vercel.app'; // Include protocol
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);

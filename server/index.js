@@ -9,12 +9,12 @@ const app = express();
 const server = http.createServer(app);
 
 // Enable CORS
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: "https://chat-room-client-orcin.vercel.app", credentials: true }));
 
 // Initialize Socket.IO with CORS options
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://chat-room-client-orcin.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
