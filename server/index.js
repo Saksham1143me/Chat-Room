@@ -17,6 +17,7 @@ const io = new Server(server, {
     origin: "https://chat-room-client-orcin.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
+    transports: ['websocket', 'polling'],
   },
 });
 
