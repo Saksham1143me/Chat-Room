@@ -22,7 +22,11 @@ function Chat() {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
     if (name && room) {
-      socketRef.current = io(ENDPOINT); // Set socket reference
+      socketRef.current = io(ENDPOINT, {
+        withCredentials: true, // Send cookies with the request
+        transports: ['websocket', 'polling'], // Use both WebSocket and polling
+      });
+// Set socket reference
 
       setName(name);
       setRoom(room);

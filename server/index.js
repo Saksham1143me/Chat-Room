@@ -17,14 +17,13 @@ app.use(cors({
 
 // Initialize Socket.IO with CORS options
 const io = new Server(server
-  // , {
-  // cors: {
-  //   origin: "https://chat-room-client-orcin.vercel.app",
-  //   methods: ["GET", "POST"],
-  //   credentials: true,
-  //   transports: ['websocket', 'polling'],
-  // },
-// }
+  , {
+  cors: {
+    origin: "https://chat-room-client-orcin.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
+}
 );
 
 // Handle Socket.IO connections
