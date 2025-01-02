@@ -9,7 +9,11 @@ const app = express();
 const server = http.createServer(app);
 
 // Enable CORS
-app.use(cors({ origin: "https://chat-room-client-orcin.vercel.app", credentials: true }));
+app.use(cors({
+    origin: "https://chat-room-client-orcin.vercel.app",
+    credentials: true,
+    methods: ["GET", "POST"],
+ }));
 
 // Initialize Socket.IO with CORS options
 const io = new Server(server
